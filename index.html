@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- DESCRIPTION -->
+        <meta name="description" content="Page de test 'Étude de cas HTML' - page d'inscription">
+        <!-- KEYWORDS -->
+        <meta name="keywords" content="Osengo,Formation,HTML,Inscription">
+        <!-- AUTHOR -->
+        <meta name="author" content="Ludo SNTS">
+        <!-- THEME SOMBRE -->
+        <!-- <meta name="color-scheme" content="dark light"> -->
+        <!-- FAVICON -->
+        <link rel="icon" href="../ASSETS/IMG/favicon.png">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../CSS/style_geoloc.css">
+        <!-- FONT AWESOME ICON -->
+        <script src="https://kit.fontawesome.com/2b128c0ddb.js" crossorigin="anonymous"></script>
+        <!-- IZITOAST -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js" integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- SWEETALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- GOOGLE FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <!-- MAPBOX -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+        <!-- TITLE -->
+        <title>Inscription - JavaScript - Géolocalisation</title>
+    </head>
+    <body id="body">
+        <form action="">
+            <!-- <div class="main-title">
+                <h1>Création d'un nouvel utilisateur</h1>
+            </div>
+            <div class="main-container">
+
+
+                <legend class="fieldset-title">Informations personelles</legend>
+                <fieldset class="fieldset-container-data info">
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <select name="qualite" class="floating-input" placeholder=" " required>
+                            <option value=""></option>
+                            <option value="femme" >Femme</option>
+                            <option value="homme">Homme</option>
+                            <option value="autre" >Autre</option>
+                            <option value="NSPP">NSPP</option>
+                        </select>
+                        <label class="floating-label">Qualité</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input class="floating-input prenom" type="text" placeholder=" " name="prenom" size="35" pattern="[A-Za-z]{1,20}" maxlength="20" id="prenom" required>
+                        <label for="prenom" class="floating-label">Prénom</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input class="floating-input" type="text" placeholder=" " name="nom" size="35" id="nom" required>
+                        <label for="nom" class="floating-label">Nom</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input class="floating-input" type="date" name="date" value="1950-01-01" required>
+                        <label class="floating-label">Date de naissance</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <textarea id="adresse" name="adresse" class="floating-input" placeholder="" required></textarea>
+                        <label for="adresse" class="floating-label">Adresse</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="text" name="codepostal" size="35" pattern="[0-9]{5}" maxlength="5" id="codepostal" class="floating-input" placeholder="" required>
+                        <label for="codepostal" class="floating-label">Code postal</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="text" name="ville" size="35" class="floating-input" placeholder="" id="ville" required>
+                        <label for="ville" class="floating-label">Ville</label>
+                    </p>
+                    <p class="floating-label-content telephone-input">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="tel" name="telephone" size="35" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" maxlength="14" class="floating-input" placeholder="" id="telephone" title="Format XX-XX-XX-XX-XX" required>
+                        <label for="telephone"  class="floating-label">Télephone</label>
+                    </p>
+                    <p class="fieldset-box-info-dispo floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <span class="floating-input dispo">
+                            <label for="disponibilite1" class="floating-label floating-label-dispo-big">Disponibilités</label>
+                            <input type="time" name="disponibilite1" id="disponibilite1" class="floating-input" required>
+                            <span>à</span>
+                            <input type="time" name="disponibilite2" id="disponibilite2" class="floating-input" required>
+                            <label for="disponibilite1" class="floating-label floating-label-dispo-reduce">Disponibilités</label>
+
+                        </span>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <select class="floating-select" placeholder="" name="pays" required>
+                            <option value="" ></option>
+                            <optgroup label="Amérique">
+                                <option value="canada" >Canada</option>
+                                <option value="etats-unis">États-Unis</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value="belgique">Belgique</option>
+                                <option value="france">France</option>
+                            </optgroup>
+                            <optgroup label="Asie">
+                                <option value="japon">Japon</option>
+                                <option value="chine">Chine</option>
+                            </optgroup>
+                        </select>
+                        <label class="floating-label">Pays</label>
+                    </p>
+                </fieldset>
+                <legend class="fieldset-title">Compte utilisateur</legend>
+                <fieldset class="fieldset-container-data user">
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="text" class="floating-input" name="identifiant" size="35" pattern="[a-zA-Z0-9_-]{5,15}" maxlength="15" placeholder="" id="identifiant" required>
+                        <label for="identifiant" class="floating-label">Identifiant</label>
+                    </p>
+
+
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="password" class="floating-input" name="motdepasse" size="35" placeholder="" id="motdepasse" required>
+                        <label for="motdepasse" class="floating-label"  id="motdepasselabel">Mot de passe</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="password" name="confirmermotdepasse" class="floating-input" size="35" placeholder="" id="confirmermotdepasse" required>
+                        <label for="confirmermotdepasse" class="floating-label" id="confirmermotdepasselabel">Confirmer le mot de passe</label>
+                    </p>
+
+
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="email" name="email" size="35" class="floating-input" placeholder="" id="email" required>
+                        <label for="email" class="floating-label">Adresse email</label>
+                    </p>
+                    <p class="floating-label-content">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="text" class="floating-input" name="trigramme" size="35" id="trigramme" disabled>
+                        <label for="trigramme" class="floating-label">Trigramme</label>
+                    </p>
+                </fieldset>
+                <legend class="fieldset-title">Vos préférences</legend>
+                <fieldset class="fieldset-container-data pref">
+                    <p class="fieldset-box-pref">
+                        <label class="fieldset-box-pref-check-container">HTML
+                            <input type="checkbox" name="pref" id="html">
+                            <span class="fieldset-box-pref-check-checkmark"></span>
+                        </label>
+                        <label class="fieldset-box-pref-check-container">CSS
+                            <input type="checkbox" name="pref" id="css">
+                            <span class="fieldset-box-pref-check-checkmark"></span>
+                        </label>
+                        <label class="fieldset-box-pref-check-container">JavaScript
+                            <input type="checkbox" name="pref" id="javascript">
+                            <span class="fieldset-box-pref-check-checkmark"></span>
+                        </label>
+                        <label class="fieldset-box-pref-check-container">PHP
+                            <input type="checkbox" name="pref" id="php">
+                            <span class="fieldset-box-pref-check-checkmark"></span>
+                        </label>
+                        <label class="fieldset-box-pref-check-container">JAVA
+                            <input type="checkbox" name="pref" id="java">
+                            <span class="fieldset-box-pref-check-checkmark"></span>
+                        </label>
+                    </p>
+                    <p class="floating-label-content url-input">
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="url" name="url" size="35" pattern="https://.*" maxlength="15" class="floating-input" placeholder="" id="url" required>
+                        <label for="url" class="floating-label">URL de votre site préféré </label>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-xs fa-star-of-life"></i>
+                        <input type="range" class="slider" list="niveau_list" name="niveau" id="niveau" step="1" min="1" max="10" value="0">
+                        <datalist id="niveau_list">
+                            <option value="1" label="10% - Débutant"></option>
+                            <option value="2" label="20%"></option>
+                            <option value="3" label="30%"></option>
+                            <option value="4" label="40%"></option>
+                            <option value="5" label="50% - Intermediaire"></option>
+                            <option value="6" label="60%"></option>
+                            <option value="7" label="70%"></option>
+                            <option value="8" label="80%"></option>
+                            <option value="9" label="90%"></option>
+                            <option value="10" label="100% - Expert"></option>
+                        </datalist>
+                            <label for="niveau">Niveau de compétence</label>
+                    </p>
+                </fieldset>
+
+
+                <div class="bottom-container">
+                    <p class="bottom-text">Champs obligatoires <i class="fa-solid fa-xs fa-star-of-life"></i></p>
+                    <div class="bottom-button-container">
+                        <button type="submit" class="button submit" id="submit">Valider <i class="fa-solid fa-xs fa-rocket"></i> </button>
+                        <button type="reset" class="button reset" id="reset">Effacer <i class="fa-solid fa-xs fa-eraser"></i></button>
+                    </div>
+                    <p class="fieldset-text">  <a href="">Retour à la page d'authentification</a></p>
+                </div>
+            </div> -->
+            <div class="main-container">
+                <legend class="fieldset-title">Géolocalisation</legend>
+                <div class="position-container">
+                    <span>position determinée 01 : </span>
+                    <span id="latitude"></span>
+                    <span id="longitude"></span>
+                    <span id="precision"></span>
+                </div>
+                <div class="position-container-2">
+                    <span>position determinée 02 : </span>
+                    <span id="coordonees"></span>
+                </div>
+
+                <div id='mapbox-container' class="map"></div>
+                <!-- <div id="googlemap-container" class="map"></div> -->
+            </div>
+        </form>
+        <!-- <script type="text/javascript" src="../JS/main.js" async></script> -->
+        <script type="text/javascript" src="../JS/geoloc.js" async></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+    </body>
+</html>
+
